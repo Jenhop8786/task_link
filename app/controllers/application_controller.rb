@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
 
     def redirect_if_not_logged_in
       if !logged_in?
-        redirect "/login?error=You have to be logged in to do that"
+        redirect "/login?error=Check your username and password"
       end
     end
 
