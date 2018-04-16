@@ -6,6 +6,6 @@ I based the idea around being a homemaker. I wasted and lost a lot of post-it no
 
 #To use this App
 
-- [ ] Clone this repo
+- [ ] Fork this repo
 - [ ] Bundle install
 - [ ] Rake db:migrate
