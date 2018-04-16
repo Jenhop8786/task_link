@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Family To-Do Lists</title>
+</head>
+<body>
+    <% if logged_in? %>
+   <h1 class="todo"><u>Get to Work</u> :Here are the To-Do Lists</h1>
+   <h4>
+      <a href="/lists/new"> Create List </a> |
+      <a href="/lists"> View Lists </a> |
+      <a href="/logout"> Log Out </a>
+    </h4>
+    <%end %>
+    <%= yield %>
+
+</body>
+</html>

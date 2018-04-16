@@ -1,0 +1,17 @@
+<h3>Create a Task:</h3>
+
+<form action="/tasks" method="POST">
+  <label> Task: </label>
+  <input type="text" name="name">
+
+  <br />
+
+  <label> Where should this task go? </label>
+  <select name="list_id">
+    <% current_user.lists.each do |list| %>
+      <option value=<%=list.id %>><%= list.name %></option>
+    <% end %>
+  </select>
+
+  <input class="btn btn-primary" type="submit" value="Create">
+</form>
