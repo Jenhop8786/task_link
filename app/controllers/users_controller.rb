@@ -14,10 +14,11 @@ class UsersController < ApplicationController
   end
 
   get '/signup' do
+    @error_message = params[:error]
     if !session[:user_id]
       erb :'users/new'
     else
-      redirect to '/tasks'
+     redirect 'lists'
     end
   end
 
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
     else
       @user = User.create(username: params[:username], password: params[:password])
       session[:user_id] = @user.id
-      redirect "/lists"
+      redirect '/lists'
     end
   end
 
@@ -44,9 +45,13 @@ class UsersController < ApplicationController
     user = User.find_by(username: params[:username])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect "/lists"
+      redirect '/lists'
     else
-      redirect "/signup"
+      redirect_if_not_logged_in
+      @error_message = params[:error]
+      @list = List.find(params[:id])
+      @list.user != current_user
+        redirect '/signup'
     end
   end
 
