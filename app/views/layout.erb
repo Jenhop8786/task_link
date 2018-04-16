@@ -4,16 +4,16 @@
   <title>Task_Link</title>
 </head>
 <body>
-    <% if logged_in? %>
-   <h1 class="todo"><u>Get to Work</u> : Here are the To-Do Lists</h1>
-   <h4>
-      <a href="/lists/new"> Create List </a> |
-      <a href="/lists"> View Lists </a> |
-      <a href="/logout"> Log Out </a>
-    </h4>
-    <%end %>
-  </nav>
-</div>
+  <% if logged_in? %>
+ <h1 class="todo"><u>Get to Work</u> : Here are the To-Do Lists</h1>
+ <h4>
+    <a href="/lists/new"> Create List </a> |
+    <a href="/lists"> View Lists </a> |
+    <a href="/logout"> Log Out </a>
+  </h4>
+
+<% end %>
+
 <nav>
   <div class="container">
     <% if !@error_message.nil? %>
@@ -22,6 +22,4 @@
     </div>
 <% end %>
   <%= yield %>
-
-</body>
 </html>

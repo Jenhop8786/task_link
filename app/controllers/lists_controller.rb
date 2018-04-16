@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     @error_message = params[:error]
     @list = List.find(params[:id])
     if @list.user != current_user
-      redirect "/lists/new?error=Hey! That list wasn't yours to mess with so why don't you:"
+      redirect "/lists/new?error=Hey! That list wasn't yours to mess with."
     end
     erb :'lists/edit'
   end
@@ -38,7 +38,7 @@ class ListsController < ApplicationController
     redirect_if_not_logged_in
     @list = List.find(params[:id])
     if @list.user != current_user
-      redirect "/lists/new?error=Hey! That list wasn't yours to mess with so why don't you:"
+      redirect "/lists/new?error=Hey! That list wasn't yours to mess with."
     else
       erb :'lists/show'
     end
