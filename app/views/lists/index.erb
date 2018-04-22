@@ -1,15 +1,17 @@
-<h2><%= current_user.username%>!</h2>
+<h2>Hey <%= current_user.username%>, get to Work !</h2>
+<% if logged_in? %>
+ <h4>
+    <a href="/lists/new"> Create List </a> |
+    <a href="/lists"> View Lists </a> |
+    <a href="/logout"> Log Out </a>
+  </h4>
+<% end %>
 
-<br />
-
-<h3>Here are all the lists:</h3>
-
+<h3>Here are all of the To-Do Lists</h3>
 <% @lists.each do |list| %>
   <ul>
     <li><h4><a href ="/lists/<%=list.id%>"><%= list.name %></a></h4></li>
     <a href="/lists/<%=list.id%>/edit">Edit List</a> |&nbsp;<a href="/tasks/new">Add Task</a>
-
-    <br><br>
-
   </ul>
 <% end %>
+
