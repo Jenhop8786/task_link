@@ -1,12 +1,8 @@
-<h3> Here are your lists, <%= current_user.username %></h3>
+<h1> Here are your lists, <%= current_user.username %></h1>
 <% current_user.lists.each do |list| %>
   <ul>
     <li><h4><a href="/lists/<%=list.id%>"><%= list.name %></a></h4></li>
     <a href="/lists/<%=list.id%>/edit">Edit List</a> |&nbsp;<a href="/tasks/new">Add Task</a>
   </ul>
 <%end%>
-<h1>
-<a href="/lists/new"> Create List </a> |
-    <a href="/lists"> View Lists </a> |
-    <a href="/logout"> Log Out </a>
-</h1>
+<h3><a href="/lists/new"> Create List </a> | <a href="/lists"> View Lists </a> | <a href="/logout"> Log Out </a></h3>
