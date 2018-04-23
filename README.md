@@ -6,6 +6,7 @@ I based the idea around being a homemaker. I wasted and lost a lot of post-it no
 
 #To use this App
 
-- [ ] Fork this repo
+- [ ] Clone this repo
 - [ ] Bundle install
 - [ ] Rake db:migrate
+- [ ] Run shotgun and enter address in browser (if using the learn IDE environment)
