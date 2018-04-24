@@ -7,4 +7,10 @@
   <% end%>
 
   <a href="/lists/<%=@list.id%>/edit">Edit List</a> |
-  <a href="/tasks/new">Add Task</a>
+  <a href="/tasks/new">Add Task</a> | <button onclick="goBack()">Go Back</button>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
