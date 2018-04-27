@@ -9,9 +9,7 @@
 
 <h3>Here are all of the To-Do Lists</h3>
 <% @lists.each do |list| %>
-  <ul>
-    <li><h4><a href ="/lists/<%=list.id%>"><%= list.name %></a></h4></li>
-    <a href="/lists/<%=list.id%>/edit">Edit List</a> |&nbsp;<a href="/tasks/new">Add Task</a>
-  </ul>
+<ul><li><h4><%=list.user.username%> Created list:<a href ="/lists/<%=list.id%>"> <%= list.name %></a></h4>
+<a href="/lists/<%=list.id%>/edit">Edit List</a> |&nbsp;<a href="/tasks/new">Add Task</a>
+  </li></ul>
 <% end %>
-

@@ -4,27 +4,24 @@
   <label> Task: </label>
   <input type="text" name="name" value="<%=@task.name %>"> </br>
 
-  <label> Where should this task go? </label>
+  <label>Where should this task go?</label>
   <select name="list_id">
     <% current_user.lists.each do |list| %>
       <option value=<%=list.id %> <%= "selected" if list.id==@task.list.id %> ><%= list.name %></option>
     <% end %>
   </select>
-
   <br />
-
   <input class="btn btn-primary" type="submit" value="Update">
 </form>
-
 <br />
 
 <form method="post" action="/tasks/<%=@task.id%>">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input class="btn btn-primary" type="submit" value="Delete">
-<form>
+</form>
 
-  <button onclick="goBack()">Go Back</button>
 
+<button onclick="goBack()">Go Back</button>
 <script>
 function goBack() {
     window.history.back();

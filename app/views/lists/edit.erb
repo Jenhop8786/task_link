@@ -1,25 +1,21 @@
 <h3>Edit "<%= @list.name %>" list</h3>
 
+<%if @list.user.id == current_user.id%>
 <form action="/lists/<%=@list.id %>" method="POST">
   <label> List Name: </label>
   <input type="text" name="name" value="<%=@list.name %>">
-
   <br />
-
   <input class="btn btn-primary" type="submit" value="Update">
-
 </form>
-
 <br />
-
 <form method="post" action="/lists/<%=@list.id%>">
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input class="btn btn-primary" type="submit" value="Delete">
-<form>
+</form>
+<% end %>
 
-  <button onclick="goBack()">Go Back</button>
-
-<script>
+ <button onclick="goBack()">Go Back</button>
+ <script>
 function goBack() {
     window.history.back();
 }

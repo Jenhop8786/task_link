@@ -1,5 +1,5 @@
-<h3><%= @task.name %></h3>
-<h4>*This belongs to the <u><a href="/lists/<%=@task.list.id%>"><%= @task.list.name %></a></u> list</h4>
+<h3>*This belongs to the <u><a href="/lists/<%=@task.list.id%>"><%= @task.list.name %></a></u> list</h3>
+<h4><ul><%= @task.name %></ul></h4>
 <a href="/tasks/<%=@task.id%>/edit">Edit Task</a>
 <br></br>
 <button onclick="goBack()">Go Back</button>
