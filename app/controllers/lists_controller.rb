@@ -55,14 +55,14 @@ class ListsController < ApplicationController
   end
 
  #DELETE ACTION
-  get '/lists/:id' do
-    @list = List.find_by_id(params[:id])
-    erb :'lists/edit'
-  end
 
   delete '/lists/:id' do
     @list = List.find_by_id(params[:id])
+    if @list.user_id == current_user.id
     @list.destroy
     redirect '/lists'
+  else
+    redirect '/lists'
   end
+ end
 end#class
